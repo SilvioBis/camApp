@@ -1,0 +1,89 @@
+1. atualizar o ionic 
+npm i -g @ionic/cli
+
+2. Criando o projeto
+ionic start camApp blank --type=angular
+opção ng models
+
+3.Documentaçaõ ionic
+rodar esse comando do Angular Bild firstApp
+camera pra filmar preferencer salva as preferencias e filesystem para começar ter acesso aos arquivos no celular
+
+npm install @capacitor/camera @capacitor/preferences @capacitor/filesystem
+
+
+4. Instalar o PWA 
+rodar esse comando
+npm install @ionic/pwa-elements
+
+5. Importar PWA no Main.ts
+
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+
+colocar no fim do codigo
+defineCustomElements(window);
+
+6. Rodar o comando do progressive Web Apps
+para transforar realmente em PWA
+
+ng add @angular/pwa
+
+7.Alguns comandos podem nao funcionar antes de compilar.
+Rodar o comando cria a pasta www
+ionic build --prod 
+
+
+8.Ir em home pagehtml
+
+colar no content
+ <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="success">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+9 Deletar o Dark theme>variabless> apagar mediadark
+
+10 Gerar um serviço de foto
+
+ ionic g service services/foto
+
+11 vai no serviço criado e coloca os importes foto.service.ts
+copia la da documentação taking-photos
+
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Preferences } from '@capacitor/preferences';
+
+
+12. Criar um nova pasta no app com nome de models
+dentro da pasta models criar um arquivo com o nome Foto.interface.ts
+
+
+
+13. dentro do arquivo Foto.interface.ts
+pegar la na pag Displaying Photos e trocar por Foto onde esta UsePhoto
+
+export interface Foto {
+  filepath: string;
+  webviewPath?: string;
+} 
+
+
+14 ir em foto.service.ts
+
+  //lista das fotos que estão armazenadas no dispositivo
+  fotos: Foto[] = [];
+  //cria uma variavel para armazenar o loca fixo das fotos
+  private FOTO_ARMAZENAMENT: string = 'fotos';
+
+
+
+
+
+ 
+
+
+
+
+
