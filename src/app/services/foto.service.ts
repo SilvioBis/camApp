@@ -21,7 +21,7 @@ export class FotoService {
     const listaFotos = await Preferences.get({ key: this.FOTO_ARMAZENAMENTO });
     this.fotos = JSON.parse(listaFotos.value as string) || [];
 
-    // Se estiver rodando no navegador...
+    // Se não estiver rodando no navegador...
     if (!this.platform.is('hybrid')) {
       // Exibir a foto lendo-a no formato base64
       for (let foto of this.fotos) {
