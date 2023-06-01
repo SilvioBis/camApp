@@ -77,6 +77,14 @@ export interface Foto {
   //cria uma variavel para armazenar o loca fixo das fotos
   private FOTO_ARMAZENAMENT: string = 'fotos';
 
+-- dia 01/06
+
+15 codigo como era de varios lugares o ronan mandou copiar do jeito que estava e depois explicava
+no foto.service.ts
+
+    Codigo demonstrado abaixo:
+      
+
 
 
 
